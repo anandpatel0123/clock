@@ -244,20 +244,20 @@ export class App
     this.TextColor = 0xff000000;
     this.LogoBGColor = 0xff000000;
     const date = new Date();
-    this.myhours = String(date.getHours());
+    this.myhours = String(date.getHours()).padStart(2, "0");
     this.myminutes = String(date.getMinutes()).padStart(2, "0");
     this.myseconds = String(date.getSeconds()).padStart(2, "0");
     this.ampm = Number(this.myhours) >= 12 ? "PM" : "AM";
     Registry.setInterval(() => {
       const date = new Date();
-      this.myhours = String(date.getHours());
+      this.myhours = String(date.getHours()).padStart(2, "0");
       this.myminutes = String(date.getMinutes()).padStart(2, "0");
       this.myseconds = String(date.getSeconds()).padStart(2, "0");
       this.ampm = Number(this.myhours) >= 12 ? "PM" : "AM";
     }, 1000);
   }
 
-  override _handleEnter() {
+  override _handleEnterRelease() {
     if (this.modeUpdate) {
       this.modeSrc = Utils.asset("images/night.png");
       this.backgroundColor = 0xfff0f8ff;

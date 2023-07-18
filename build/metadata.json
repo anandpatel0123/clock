@@ -1,0 +1,6 @@
+{
+  "name": "clock",
+  "identifier": "com.domain.app.clock",
+  "version": "1.0.0",
+  "icon": "./static/icon.png"
+}
